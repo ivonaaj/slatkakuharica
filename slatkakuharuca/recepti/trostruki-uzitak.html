@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trostruki užitak - SLATKA KUHARICA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html">
+        <img src="../assets/logo1.png" class="logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="../kolaci.html">← Nazad na recepte</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-container">
+
+    <div class="recipe-header">
+        <img src="../assets/trostruki.jpg" alt="Trostruki užitak" class="recipe-image">
+
+        <h1 class="recipe-title">Trostruki užitak</h1>
+
+        <div class="recipe-meta">
+            <div class="meta-item">⏱️ 60 min pripreme</div>
+            <div class="meta-item">🍰 12-16 porcija</div>
+            <div class="meta-item">⭐ Srednja težina</div>
+        </div>
+
+        <button onclick="downloadPDF()" class="download-btn">
+            📄 Preuzmi recept u PDF
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>🥘 Sastojci</h2>
+
+        <h3>Tijesto</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Bjelanci</span> <span class="ingredient-amount">6 kom</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">20 dag</span></li>
+            <li><span class="ingredient-name">Orahi</span> <span class="ingredient-amount">15 dag</span></li>
+            <li><span class="ingredient-name">Krušne mrvice</span> <span class="ingredient-amount">2 žlice</span></li>
+            <li><span class="ingredient-name">Brašno</span> <span class="ingredient-amount">3 žlice</span></li>
+            <li><span class="ingredient-name">Prašak za pecivo</span> <span class="ingredient-amount">1/2 paketića</span></li>
+        </ul>
+
+        <h3>Krema</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Mlijeko</span> <span class="ingredient-amount">6 dl</span></li>
+            <li><span class="ingredient-name">Žumanjci</span> <span class="ingredient-amount">6 kom</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">20 dag</span></li>
+            <li><span class="ingredient-name">Puding od vanilije</span> <span class="ingredient-amount">2 kom</span></li>
+            <li><span class="ingredient-name">Margarin</span> <span class="ingredient-amount">25 dag</span></li>
+            <li><span class="ingredient-name">Čokolada za kuhanje</span> <span class="ingredient-amount">10 dag</span></li>
+            <li><span class="ingredient-name">Mljeveni orasi za posipanje</span> <span class="ingredient-amount">malo</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Priprema</h2>
+
+        <div class="preparation-steps">
+
+            <div class="step">
+                <p>Bjelance istući u čvrsti snijeg i postupno dodavati šećer. Zatim lagano umiješati brašno s praškom za pecivo, orahe i mrvice. Peći na 180°C oko 25 minuta.</p>
+            </div>
+
+            <div class="step">
+                <p>Za kremu umutiti žumanjke, šećer i puding s malo mlijeka, zatim ukuhati u ostatak mlijeka. Polovicu smjese pomiješati s otopljenom čokoladom. Ohladiti i dodati izrađeni margarin u obje kreme.</p>
+            </div>
+
+            <div class="step">
+                <p>Biskvit premazati žutom kremom, dodati kekse namočene u kavu, zatim premazati čokoladnom kremom i posuti mljevenim orasima.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 SLATKA KUHARICA · Ivona Jurković
+</footer>
+
+<script>
+function downloadPDF() {
+    const element = document.querySelector('.recipe-container');
+
+    const opt = {
+        margin: 0.5,
+        filename: 'trostruki-uzitak-recept.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>

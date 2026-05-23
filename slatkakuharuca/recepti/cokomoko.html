@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Čoko moko - SLATKA KUHARICA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html">
+        <img src="../assets/logo1.png" class="logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="../kolaci.html">← Nazad na recepte</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-container">
+
+    <div class="recipe-header">
+        <img src="../assets/moko.jpg" alt="Čoko moko" class="recipe-image">
+
+        <h1 class="recipe-title">Čoko moko</h1>
+
+        <div class="recipe-meta">
+            <div class="meta-item">⏱️ 30 min pripreme</div>
+            <div class="meta-item">🍰 12-16 porcija</div>
+            <div class="meta-item">⭐ Srednja težina</div>
+        </div>
+
+        <button onclick="downloadPDF()" class="download-btn">
+            📄 Preuzmi recept u PDF
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>🥘 Sastojci</h2>
+
+        <h3>Kora (4 kore)</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Jaja</span> <span class="ingredient-amount">20 kom</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">20 kašika</span></li>
+            <li><span class="ingredient-name">Mleveni orasi</span> <span class="ingredient-amount">24 kašike</span></li>
+            <li><span class="ingredient-name">Brašno</span> <span class="ingredient-amount">20 kašika</span></li>
+            <li><span class="ingredient-name">Praškasta za pecivo</span> <span class="ingredient-amount">2 kašike</span></li>
+            <li><span class="ingredient-name">Kakao prah</span> <span class="ingredient-amount">8 kašika</span></li>
+        </ul>
+
+        <h3>Prvi fil</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Šećer u prahu</span> <span class="ingredient-amount">200g</span></li>
+            <li><span class="ingredient-name">Kisela pavlaka</span> <span class="ingredient-amount">700g</span></li>
+            <li><span class="ingredient-name">Mlevena plazma</span> <span class="ingredient-amount">400g</span></li>
+            <li><span class="ingredient-name">Beli krem šlag</span> <span class="ingredient-amount">100g</span></li>
+            <li><span class="ingredient-name">Kisela voda</span> <span class="ingredient-amount">100ml</span></li>
+        </ul>
+
+        <h3>Drugi fil</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Beli krem šlag</span> <span class="ingredient-amount">500g</span></li>
+            <li><span class="ingredient-name">Kisela voda</span> <span class="ingredient-amount">500ml</span></li>
+        </ul>
+
+        <h3>Preliv za kore</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Čokoladno mleko</span> <span class="ingredient-amount">8dl</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Priprema</h2>
+
+        <div class="preparation-steps">
+
+            <div class="step">
+                <p>Umutiti 5 bjelanjaka u snijeg, dodati 5 kašika šećera i mutiti dok se ne otopi. Dodati žumanjke i mljevene orahe.</p>
+            </div>
+
+            <div class="step">
+                <p>Pomiješati brašno, prašak za pecivo i kakao te lagano dodavati u smjesu. Peći u plehu (25×40 cm) na 190°C. Napraviti ukupno 4 kore.</p>
+            </div>
+
+            <div class="step">
+                <p>Prvi fil: umutiti pavlaku sa šećerom u prahu, dodati mljevenu plazmu i umućeni šlag s kiselom vodom.</p>
+            </div>
+
+            <div class="step">
+                <p>Drugi fil: umutiti šlag krem s kiselom vodom.</p>
+            </div>
+
+            <div class="step">
+                <p>Slaganje: koru preliti čokoladnim mlijekom, dodati prvi fil pa šlag. Ponavljati postupak dok se ne potroše sastojci.</p>
+            </div>
+
+            <div class="step">
+                <p>Cijelu tortu premazati šlagom i dobro ohladiti prije posluživanja.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 SLATKA KUHARICA · Ivona Jurković
+</footer>
+
+<script>
+function downloadPDF() {
+    const element = document.querySelector('.recipe-container');
+
+    const opt = {
+        margin: 0.5,
+        filename: 'coko-moko-recept.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>

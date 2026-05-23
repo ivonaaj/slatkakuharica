@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pošalji recept</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins';
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: rgba(90,58,74,0.95);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: rgba(177, 121, 149, 0.95);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html">
+    <img src="assets/logo1.png" class="logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="kolaci.html">Kolači</a></li>
+    <li><a href="torte.html">Torte</a></li>
+    <li><a href="veganski.html">Veganski</a></li>
+    <li><a href="kontakt.html" class="active">Pošalji recept</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="header-kolaci">
+  <h1>SLATKA KUHARICA</h1>
+  <p class="tagline">Podijeli svoj recept s nama!</p>
+</header>
+
+<!-- FORMA -->
+<div class="form-container">
+
+<h2>Pošalji svoj recept</h2>
+
+<form class="contact-form form-grid">
+
+<div class="form-group">
+<label>Ime:</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Naziv recepta:</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Kategorija:</label>
+<select required>
+<option value="">Odaberi</option>
+<option>Kolač</option>
+<option>Torta</option>
+<option>Veganski</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Vrijeme pripreme (min):</label>
+<input type="number" required>
+</div>
+
+<div class="form-group">
+<label>Težina:</label>
+<select required>
+<option value="">Odaberi</option>
+<option>Lagana</option>
+<option>Srednja</option>
+<option>Teška</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Sastojci:</label>
+<textarea rows="4" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Priprema:</label>
+<textarea rows="5" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Slika:</label>
+<input type="file" required>
+</div>
+
+<button class="submit-btn">Pošalji recept</button>
+
+</form>
+
+</div>
+
+<footer class="footer">
+<p>© 2026 Slatka kuharica · Ivona Jurković</p>
+</footer>
+
+<script>
+const form = document.querySelector('.contact-form');
+
+form.addEventListener('submit', function(e) {
+
+  // ako nešto nije popunjeno
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    form.reportValidity();
+    return;
+  }
+
+  // ako je sve ispravno
+  e.preventDefault();
+
+  alert("Hvala! Recept je uspješno poslan 😊");
+
+  // očisti formu
+  form.reset();
+});
+</script>
+
+</body>
+</html>

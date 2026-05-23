@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torte</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <a href="index.html">
+    <img src="assets/logo1.png" class="logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="kolaci.html">Kolači</a></li>
+    <li><a href="torte.html" class="active">Torte</a></li>
+    <li><a href="veganski.html">Veganski</a></li>
+    <li><a href="kontakt.html">Pošalji recept</a></li>
+  </ul>
+
+</nav>
+
+<!-- HEADER -->
+<header class="header-kolaci">
+
+<h1>SLATKA KUHARICA</h1>
+<p class="tagline">Savršene torte za svaku priliku.</p>
+
+<div class="header-tools">
+
+<input type="text" id="searchInput" class="search-box" placeholder="Pretraži torte...">
+
+<button class="sort-btn active" onclick="sortRecipes('name', event)">A-Z</button>
+<button class="sort-btn" onclick="sortRecipes('time', event)">Vrijeme</button>
+<button class="sort-btn" onclick="sortRecipes('difficulty', event)">Težina</button>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="subtitle">Život je slađi uz dobru tortu!</div>
+
+<div class="container" id="recipesContainer">
+
+<!-- ČOKOLADNA TORTA -->
+<div class="card" data-name="Čokoladna torta" data-time="90" data-difficulty="Srednja">
+<img src="assets/cokoladna-torta.jpg">
+<div class="recipe-meta">
+<div class="meta-item">⏱️ 90 min</div>
+<div class="meta-item">🍰 10-12</div>
+<div class="meta-item">⭐ Srednja</div>
+</div>
+<div class="card-content">
+<div class="card-title">Čokoladna torta</div>
+<a href="recepti/cokoladnatorta.html" class="btn">Pogledaj recept</a>
+</div>
+</div>
+
+<!-- LEDENI VJETAR -->
+<div class="card" data-name="Ledeni vjetar" data-time="120" data-difficulty="Srednja">
+<img src="assets/ledenivjetar.jpg">
+<div class="recipe-meta">
+<div class="meta-item">⏱️ 120 min</div>
+<div class="meta-item">🍰 10-12</div>
+<div class="meta-item">⭐ Srednja</div>
+</div>
+<div class="card-content">
+<div class="card-title">Ledeni vjetar</div>
+<a href="recepti/ledenivjetar.html" class="btn">Pogledaj recept</a>
+</div>
+</div>
+
+<!-- TORTA OD JAGODA -->
+<div class="card" data-name="Torta od jagoda" data-time="45" data-difficulty="Srednja">
+<img src="assets/jagode.jpg">
+<div class="recipe-meta">
+<div class="meta-item">⏱️ 45 min</div>
+<div class="meta-item">🍰 6</div>
+<div class="meta-item">⭐ Srednja</div>
+</div>
+<div class="card-content">
+<div class="card-title">Torta od jagoda</div>
+<a href="recepti/tortaodjagoda.html" class="btn">Pogledaj recept</a>
+</div>
+</div>
+
+<!-- ČOKO MOKO -->
+<div class="card" data-name="Čoko moko torta" data-time="30" data-difficulty="Srednja">
+<img src="assets/moko.jpg">
+<div class="recipe-meta">
+<div class="meta-item">⏱️ 30 min</div>
+<div class="meta-item">🍰 12-16</div>
+<div class="meta-item">⭐ Srednja</div>
+</div>
+<div class="card-content">
+<div class="card-title">Čoko moko torta</div>
+<a href="recepti/cokomoko.html" class="btn">Pogledaj recept</a>
+</div>
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+<p>© 2026 Slatka kuharica · Ivona Jurković</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

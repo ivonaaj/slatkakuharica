@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torta od jagoda - SLATKA KUHARICA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html">
+        <img src="../assets/logo1.png" class="logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="../torte.html">← Nazad na recepte</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-container">
+
+    <div class="recipe-header">
+        <img src="../assets/jagode.jpg" alt="Torta od jagoda" class="recipe-image">
+
+        <h1 class="recipe-title">Torta od jagoda</h1>
+
+        <div class="recipe-meta">
+            <div class="meta-item">⏱️ 45 min pripreme</div>
+            <div class="meta-item">🍰 6 porcija</div>
+            <div class="meta-item">⭐ Srednja težina</div>
+        </div>
+
+        <button onclick="downloadPDF()" class="download-btn">
+            📄 Preuzmi recept u PDF
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>🥘 Sastojci</h2>
+
+        <h3>Podloga</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Digestiv keksi</span> <span class="ingredient-amount">200 g</span></li>
+            <li><span class="ingredient-name">Mljeveni bademi ili lješnjaci</span> <span class="ingredient-amount">100 ml</span></li>
+            <li><span class="ingredient-name">Maslac</span> <span class="ingredient-amount">100 g</span></li>
+        </ul>
+
+        <h3>Nadjev</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Slatko vrhnje</span> <span class="ingredient-amount">300 ml</span></li>
+            <li><span class="ingredient-name">Kiselo vrhnje</span> <span class="ingredient-amount">300 ml</span></li>
+            <li><span class="ingredient-name">Šećer u prahu</span> <span class="ingredient-amount">150 g</span></li>
+            <li><span class="ingredient-name">Želatina</span> <span class="ingredient-amount">10-12 g</span></li>
+            <li><span class="ingredient-name">Voda</span> <span class="ingredient-amount">6 žlica</span></li>
+            <li><span class="ingredient-name">Sok limuna ili limete</span> <span class="ingredient-amount">3 žlice</span></li>
+            <li><span class="ingredient-name">Korica limuna ili limete</span> <span class="ingredient-amount">malo</span></li>
+            <li><span class="ingredient-name">Jagode</span> <span class="ingredient-amount">500 g</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Priprema</h2>
+
+        <div class="preparation-steps">
+
+            <div class="step">
+                <p>Samljeti kekse i bademe, dodati otopljeni maslac i dobro promiješati. Smjesu utisnuti na dno kalupa i staviti na hlađenje.</p>
+            </div>
+
+            <div class="step">
+                <p>Želatinu pomiješati s hladnom vodom i ostaviti da nabubri. U međuvremenu umutiti slatko vrhnje sa šećerom, dodati kiselo vrhnje i limunov sok.</p>
+            </div>
+
+            <div class="step">
+                <p>Otopiti želatinu i u tankom mlazu dodavati u smjesu stalno miksajući.</p>
+            </div>
+
+            <div class="step">
+                <p>Jagode oprati i posložiti na podlogu. Preliti kremom i posuti koricom limuna ili limete.</p>
+            </div>
+
+            <div class="step">
+                <p>Ostaviti u hladnjaku da se stisne prije posluživanja. Po želji ukrasiti voćem ili čokoladom.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 SLATKA KUHARICA · Ivona Jurković
+</footer>
+
+<script>
+function downloadPDF() {
+    const element = document.querySelector('.recipe-container');
+
+    const opt = {
+        margin: 0.5,
+        filename: 'torta-od-jagoda.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>

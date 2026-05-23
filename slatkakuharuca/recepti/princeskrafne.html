@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princeskrafne - SLATKA KUHARICA</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7DXBVVCWKD');
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="../index.html">
+        <img src="../assets/logo1.png" class="logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="../kolaci.html">← Nazad na recepte</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-container">
+
+    <div class="recipe-header">
+        <img src="../assets/princess.jpg" alt="Princeskrafne" class="recipe-image">
+
+        <h1 class="recipe-title">Princeskrafne</h1>
+
+        <div class="recipe-meta">
+            <div class="meta-item">⏱️ 45 min pripreme</div>
+            <div class="meta-item">🍰 45-50 kom</div>
+            <div class="meta-item">⭐ Srednja težina</div>
+        </div>
+
+        <button onclick="downloadPDF()" class="download-btn">
+            📄 Preuzmi recept u PDF
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>🥘 Sastojci</h2>
+
+        <h3>Tijesto</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Voda</span> <span class="ingredient-amount">250 ml</span></li>
+            <li><span class="ingredient-name">Maslac</span> <span class="ingredient-amount">100 g</span></li>
+            <li><span class="ingredient-name">Brašno</span> <span class="ingredient-amount">150 g</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">1 žlica</span></li>
+            <li><span class="ingredient-name">Sol</span> <span class="ingredient-amount">1 prstohvat</span></li>
+            <li><span class="ingredient-name">Jaja</span> <span class="ingredient-amount">4 kom</span></li>
+        </ul>
+
+        <h3>Krema</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Jaja</span> <span class="ingredient-amount">6 kom</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">6 žlica</span></li>
+            <li><span class="ingredient-name">Vanilin šećer</span> <span class="ingredient-amount">1 kom</span></li>
+            <li><span class="ingredient-name">Limunova korica</span> <span class="ingredient-amount">malo</span></li>
+            <li><span class="ingredient-name">Gustin</span> <span class="ingredient-amount">10 žlica</span></li>
+            <li><span class="ingredient-name">Mlijeko</span> <span class="ingredient-amount">500 ml</span></li>
+            <li><span class="ingredient-name">Maslac</span> <span class="ingredient-amount">50 g</span></li>
+            <li><span class="ingredient-name">Slatko vrhnje</span> <span class="ingredient-amount">200 ml</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Priprema</h2>
+
+        <div class="preparation-steps">
+
+            <div class="step">
+                <p>Zakuhati vodu, maslac, šećer i sol dok se maslac ne otopi. Maknuti s vatre i dodati brašno odjednom te miješati dok se ne sjedini.</p>
+            </div>
+
+            <div class="step">
+                <p>Vratiti na laganu vatru i miješati dok se tijesto ne odvaja od posude. Malo ohladiti pa dodavati jaja jedno po jedno.</p>
+            </div>
+
+            <div class="step">
+                <p>Tijesto staviti u slastičarsku vrećicu i oblikovati kuglice na papir za pečenje. Peći na 200°C oko 30 minuta bez otvaranja pećnice.</p>
+            </div>
+
+            <div class="step">
+                <p>Za kremu umutiti žumanjke sa šećerom i vanilin šećerom, dodati gustin i malo mlijeka. Uliti u zagrijano mlijeko i kuhati dok se ne zgusne.</p>
+            </div>
+
+            <div class="step">
+                <p>Dodati maslac i lagano umiješati snijeg od bjelanjaka. Ohladiti.</p>
+            </div>
+
+            <div class="step">
+                <p>Krafne prerezati, napuniti kremom i po želji dodati šlag. Posuti šećerom u prahu.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 SLATKA KUHARICA · Ivona Jurković
+</footer>
+
+<script>
+function downloadPDF() {
+    const element = document.querySelector('.recipe-container');
+    const nav = document.querySelector('.navbar');
+    const footer = document.querySelector('.footer');
+
+    nav.style.display = 'none';
+    footer.style.display = 'none';
+
+    const opt = {
+        margin: 0,
+        filename: 'princeskrafne.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save().then(() => {
+        nav.style.display = 'block';
+        footer.style.display = 'block';
+    });
+}
+</script>
+
+</body>
+</html>

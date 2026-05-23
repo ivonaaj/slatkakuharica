@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torta od mrkve - SLATKA KUHARICA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html">
+        <img src="../assets/logo1.png" class="logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="../veganski.html">← Nazad na recepte</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-container">
+
+    <div class="recipe-header">
+        <img src="../assets/torta-mrkva.jpg" alt="Torta od mrkve" class="recipe-image">
+
+        <h1 class="recipe-title">Torta od mrkve</h1>
+
+        <div class="recipe-meta">
+            <div class="meta-item">⏱️ 60 min pripreme</div>
+            <div class="meta-item">🍰 8-10 porcija</div>
+            <div class="meta-item">⭐ Srednja težina</div>
+        </div>
+
+        <button onclick="downloadPDF()" class="download-btn">
+            📄 Preuzmi recept u PDF
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>🥘 Sastojci</h2>
+
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Brašno</span> <span class="ingredient-amount">2 šalice</span></li>
+            <li><span class="ingredient-name">Naribana mrkva</span> <span class="ingredient-amount">1,5 šalica</span></li>
+            <li><span class="ingredient-name">Cimet</span> <span class="ingredient-amount">2 žličice</span></li>
+            <li><span class="ingredient-name">Naranča</span> <span class="ingredient-amount">1 kom</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">7 žlica</span></li>
+            <li><span class="ingredient-name">Ulje</span> <span class="ingredient-amount">1/2 šalice</span></li>
+            <li><span class="ingredient-name">Prašak za pecivo</span> <span class="ingredient-amount">1/2 vrećice</span></li>
+            <li><span class="ingredient-name">Orasi</span> <span class="ingredient-amount">šaka</span></li>
+        </ul>
+
+        <h3>Preljev</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Kakao</span> <span class="ingredient-amount">2 žlice</span></li>
+            <li><span class="ingredient-name">Ulje</span> <span class="ingredient-amount">malo</span></li>
+            <li><span class="ingredient-name">Sojino mlijeko</span> <span class="ingredient-amount">malo</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">2 žlice</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Priprema</h2>
+
+        <div class="preparation-steps">
+
+            <div class="step">
+                <p>Naribati mrkvu što sitnije i dodati naribanu koru naranče. Iscijediti sok naranče i pomiješati ga s uljem i šećerom.</p>
+            </div>
+
+            <div class="step">
+                <p>U drugoj zdjeli pomiješati brašno, prašak za pecivo i cimet. Dodati nasjeckane orahe.</p>
+            </div>
+
+            <div class="step">
+                <p>Suhu smjesu dodati u tekuću, zatim postupno dodavati mrkvu. Po potrebi dodati malo sojinog mlijeka.</p>
+            </div>
+
+            <div class="step">
+                <p>Peći u pećnici na 180°C oko 40 minuta.</p>
+            </div>
+
+            <div class="step">
+                <p>Za preljev pomiješati kakao, šećer, ulje i sojino mlijeko te kuhati 2-3 minute dok se ne zgusne.</p>
+            </div>
+
+            <div class="step">
+                <p>Preliti kolač i ostaviti u hladnjaku nekoliko sati (ili preko noći) prije posluživanja.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 SLATKA KUHARICA · Ivona Jurković
+</footer>
+
+<script>
+function downloadPDF() {
+    const element = document.querySelector('.recipe-container');
+
+    const opt = {
+        margin: 0.5,
+        filename: 'torta-od-mrkve.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veganski recepti</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <a href="index.html">
+    <img src="assets/logo1.png" class="logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="kolaci.html">Kolači</a></li>
+    <li><a href="torte.html">Torte</a></li>
+    <li><a href="veganski.html" class="active">Veganski</a></li>
+    <li><a href="kontakt.html">Pošalji recept</a></li>
+  </ul>
+
+</nav>
+
+<!-- HEADER -->
+<header class="header-kolaci">
+
+<h1>SLATKA KUHARICA</h1>
+<p class="tagline">Slatko može biti i bez životinjskih proizvoda.</p>
+
+<div class="header-tools">
+
+<input type="text" id="searchInput" class="search-box" placeholder="Pretraži veganske recepte...">
+
+<button class="sort-btn active" onclick="sortRecipes('name', event)">A-Z</button>
+<button class="sort-btn" onclick="sortRecipes('time', event)">Vrijeme</button>
+<button class="sort-btn" onclick="sortRecipes('difficulty', event)">Težina</button>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="subtitle">Zdravo, ukusno i bez kompromisa!</div>
+
+<div class="container" id="recipesContainer">
+
+<!-- ČOKOLADNE KUGLICE -->
+<div class="card" data-name="Čokoladne kuglice" data-time="30" data-difficulty="Lagana">
+<img src="assets/kuglice.jpg">
+<div class="recipe-meta">
+<div class="meta-item">⏱️ 30 min</div>
+<div class="meta-item">🍰 6-8</div>
+<div class="meta-item">⭐ Lagana</div>
+</div>
+<div class="card-content">
+<div class="card-title">Čokoladne kuglice</div>
+<a href="recepti/cokoladnekuglice.html" class="btn">Pogledaj recept</a>
+</div>
+</div>
+
+<!-- TORTA OD MRKVE -->
+<div class="card" data-name="Torta od mrkve" data-time="60" data-difficulty="Srednja">
+<img src="assets/torta-mrkva.jpg">
+<div class="recipe-meta">
+<div class="meta-item">⏱️ 60 min</div>
+<div class="meta-item">🍰 8-10</div>
+<div class="meta-item">⭐ Srednja</div>
+</div>
+<div class="card-content">
+<div class="card-title">Torta od mrkve</div>
+<a href="recepti/tortaodmrkve.html" class="btn">Pogledaj recept</a>
+</div>
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+<p>© 2026 Slatka kuharica · Ivona Jurković</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

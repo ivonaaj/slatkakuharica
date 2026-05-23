@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DXBVVCWKD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-7DXBVVCWKD');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Čokoladna torta - SLATKA KUHARICA</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html">
+        <img src="../assets/logo1.png" class="logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="../torte.html">← Nazad na recepte</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-container">
+
+    <div class="recipe-header">
+        <img src="../assets/cokoladna-torta.jpg" alt="Čokoladna torta" class="recipe-image">
+
+        <h1 class="recipe-title">Čokoladna torta</h1>
+
+        <div class="recipe-meta">
+            <div class="meta-item">⏱️ 1 h 30 min pripreme</div>
+            <div class="meta-item">🍰 10-12 porcija</div>
+            <div class="meta-item">⭐ Srednja težina</div>
+        </div>
+
+        <button onclick="downloadPDF()" class="download-btn">
+            📄 Preuzmi recept u PDF
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>🥘 Sastojci</h2>
+
+        <h3>Biskvit (x3)</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Jaja</span> <span class="ingredient-amount">3 kom</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">6 žlica</span></li>
+            <li><span class="ingredient-name">Ulje</span> <span class="ingredient-amount">3 žlice</span></li>
+            <li><span class="ingredient-name">Mlijeko</span> <span class="ingredient-amount">3 žlice</span></li>
+            <li><span class="ingredient-name">Kakao</span> <span class="ingredient-amount">3 žlice</span></li>
+            <li><span class="ingredient-name">Glatko brašno</span> <span class="ingredient-amount">3 žlice</span></li>
+            <li><span class="ingredient-name">Prašak za pecivo</span> <span class="ingredient-amount">1/2 vrećice</span></li>
+        </ul>
+
+        <h3>Fil</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Bijela čokolada</span> <span class="ingredient-amount">300 g</span></li>
+            <li><span class="ingredient-name">Crna čokolada</span> <span class="ingredient-amount">300 g</span></li>
+            <li><span class="ingredient-name">Vrhnje za šlag</span> <span class="ingredient-amount">500 ml</span></li>
+            <li><span class="ingredient-name">Margarin</span> <span class="ingredient-amount">125 g</span></li>
+        </ul>
+
+        <h3>Sirup</h3>
+        <ul class="ingredients-list">
+            <li><span class="ingredient-name">Voda</span> <span class="ingredient-amount">3 dl</span></li>
+            <li><span class="ingredient-name">Šećer</span> <span class="ingredient-amount">7 žlica</span></li>
+            <li><span class="ingredient-name">Mlijeko</span> <span class="ingredient-amount">1 dl</span></li>
+            <li><span class="ingredient-name">Kakao</span> <span class="ingredient-amount">1 žlica</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Priprema</h2>
+
+        <div class="preparation-steps">
+
+            <div class="step">
+                <p>Pećnicu zagrijati na 180°C i pripremiti kalup s papirom za pečenje.</p>
+            </div>
+
+            <div class="step">
+                <p>Za biskvit umutiti jaja sa šećerom dok ne postanu pjenasta. Dodati ulje, zatim naizmjenično brašno s kakaom i praškom za pecivo te mlijeko. Peći 20–25 minuta. Postupak ponoviti tri puta.</p>
+            </div>
+
+            <div class="step">
+                <p>Za fil otopiti bijelu i crnu čokoladu u vrhnju na laganoj vatri. Dodati margarin i miješati dok smjesa ne postane glatka. Ostaviti da se malo stisne.</p>
+            </div>
+
+            <div class="step">
+                <p>Sirup pripremiti kuhanjem vode i šećera, zatim dodati mlijeko s kakaom i kuhati još nekoliko minuta.</p>
+            </div>
+
+            <div class="step">
+                <p>Slaganje: kora – sirup – fil – kora – sirup – fil – kora – sirup – fil. Tortu ostaviti preko noći i ukrasiti po želji.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 SLATKA KUHARICA · Ivona Jurković
+</footer>
+
+<script>
+function downloadPDF() {
+    const element = document.querySelector('.recipe-container');
+
+    const opt = {
+        margin: 0.5,
+        filename: 'cokoladna-torta.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>
